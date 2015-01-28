@@ -19,9 +19,13 @@ package() {
 
    msg2 "Copying files..."
    mkdir -p $pkgdir/usr/bin
+   # adding entry for GNOME3
+   mkdir -p $pkgdir/usr/share/applications
    mkdir -p $pkgdir/etc/skel/Desktop
    mkdir -p $pkgdir/usr/lib/mtinstall
    cp bin/mtinstall "$pkgdir/usr/bin/mtinstall"
+   # adding entry for GNOME3 to show in main menu installer
+   cp bin/installer.desktop "$pkgdir/usr/share/applications"
    cp bin/installer.desktop "$pkgdir/etc/skel/Desktop"
    cp -a locales "$pkgdir/usr/lib/mtinstall"
 }
